@@ -4,7 +4,7 @@ import { typographyClasses } from '@mui/material/Typography';
 import { buttonBaseClasses } from '@mui/material/ButtonBase';
 import { chipClasses } from '@mui/material/Chip';
 import { iconButtonClasses } from '@mui/material/IconButton';
-import { gray, red, green } from '../themePrimitives';
+import { gray, red, green, orange, brand } from '../themePrimitives';
 
 /* eslint-disable import/prefer-default-export */
 export const dataDisplayCustomizations = {
@@ -98,6 +98,56 @@ export const dataDisplayCustomizations = {
           fontWeight: 600,
         },
         variants: [
+          {
+            props: {
+              color: 'info',
+            },
+            style: {
+              borderColor: brand[200],
+              backgroundColor: brand[100],
+              [`& .${chipClasses.label}`]: {
+                color: brand[500],
+              },
+              [`& .${chipClasses.icon}`]: {
+                color: brand[500],
+              },
+              ...theme.applyStyles('dark', {
+                borderColor: brand[700],
+                backgroundColor: brand[800],
+                [`& .${chipClasses.label}`]: {
+                  color: brand[300],
+                },
+                [`& .${chipClasses.icon}`]: {
+                  color: brand[300],
+                },
+              }),
+            },
+          },
+          {
+            props: {
+              color: 'warning',
+            },
+            style: {
+              borderColor: orange[200],
+              backgroundColor: orange[100],
+              [`& .${chipClasses.label}`]: {
+                color: orange[500],
+              },
+              [`& .${chipClasses.icon}`]: {
+                color: orange[500],
+              },
+              ...theme.applyStyles('dark', {
+                borderColor: orange[700],
+                backgroundColor: orange[800],
+                [`& .${chipClasses.label}`]: {
+                  color: orange[300],
+                },
+                [`& .${chipClasses.icon}`]: {
+                  color: orange[300],
+                },
+              }),
+            },
+          },
           {
             props: {
               color: 'default',
